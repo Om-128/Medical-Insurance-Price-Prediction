@@ -1,49 +1,48 @@
-# Medical Insurance Price Prediction
+# Medical Insurance Price Prediction – End-to-End ML Project
 
-A Python-based machine learning project to predict medical insurance charges using various regression models, including ensemble learning techniques. The goal is to explore different models, compare their performance, and build a modular, scalable solution.
+A complete machine learning solution to predict medical insurance charges using various regression models and ensemble learning techniques. The project is built as a modular, scalable Python application, containerized using Docker, and deployed on AWS EC2 with an automated CI/CD pipeline.
 
 ---
 
-## 📖 **Project Overview**
+## 🚀 **Project Overview**
 
-This project predicts the cost of medical insurance based on factors such as age, BMI, smoking status, number of dependents, and region. It leverages traditional regression models as well as advanced ensemble learning methods to improve accuracy and generalization.
+This project predicts medical insurance costs based on user data such as age, BMI, smoking status, and region. It integrates exploratory data analysis, feature engineering, and model training with robust evaluation metrics. Multiple models are compared, with ensemble techniques like Random Forest, XGBoost, and CatBoost being used to improve prediction accuracy.
+
+The entire pipeline is packaged into a deployable application using **Docker**, continuously integrated and deployed through **CI/CD workflows**, and hosted on **AWS EC2**.
 
 ---
 
 ## ✅ **Key Features**
 
-- Exploratory Data Analysis (EDA) to understand feature relationships
-- Data preprocessing with scaling and encoding techniques
-- Implementation of multiple regression algorithms:
-  - Linear Regression
-  - Lasso Regression
-  - Ridge Regression
-  - K-Nearest Neighbors (KNN)
-  - Decision Tree
-  - Random Forest
-  - XGBoost
-  - CatBoost
-  - AdaBoost
-- Performance evaluation using:
-  - Root Mean Squared Error (RMSE)
-  - Mean Absolute Error (MAE)
-  - R² Score
-- Comparison of model performances to select the best one
-- Modular project structure with reusable components
-- Ready for deployment and further enhancements
+✔ Data ingestion, preprocessing, and transformation  
+✔ Implementation of multiple regression models including ensemble methods  
+✔ Comprehensive evaluation using RMSE, MAE, and R² Score  
+✔ Comparison of models to identify best-performing algorithms  
+✔ Dockerized environment for reproducibility and scalability  
+✔ CI/CD pipeline for automated testing, building, and deployment  
+✔ AWS EC2 hosting for serving predictions in production  
+✔ Modular, maintainable, and extendable project structure
 
 ---
 
-## 🧰 **Technologies Used**
+## 📂 **Technologies Used**
 
-- Python 3.x
-- Pandas, NumPy
-- Scikit-learn, XGBoost, CatBoost
-- Matplotlib, Seaborn (for visualization)
-- Flask / FastAPI (for future API deployment)
-- Pickle / Joblib (for model serialization)
+**Programming & Libraries:**  
+- Python 3.x, Pandas, NumPy  
+- Scikit-learn, XGBoost, CatBoost  
+- Matplotlib, Seaborn  
+
+**Deployment & DevOps:**  
+- Docker for containerization  
+- GitHub Actions / CircleCI (or preferred CI/CD tool) for automated workflows  
+- AWS EC2 for cloud hosting and scalability  
+- Flask / FastAPI for serving APIs  
+
+**Others:**  
+- Pickle / Joblib for model serialization  
+- Cloud storage or databases for data persistence (optional for extensions)
 
 ---
 
-## 📂 **Project Structure**
+## 📁 **Project Structure**
 
