@@ -4,10 +4,15 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+
+from src.utils import save_object
 
 @dataclass
 class DataIngestionConfig:
@@ -43,9 +48,10 @@ class DataIngestion:
 
             logging.info("Ingestion of data is completed")
 
+            
             return (
-                self.ingestion_config.train_data_path,
-                self.ingestion_config.test_data_path
+                self.config.train_data_path,
+                self.config.test_data_path
             )
 
         except Exception as e:
@@ -53,6 +59,13 @@ class DataIngestion:
 
 
 if __name__ == "__main__":
+
     data_ingestion_config = DataIngestionConfig()
+
     data_ingestion = DataIngestion(data_ingestion_config)
-    data_ingestion.initiate_data_ingestion()
+
+    train_data, test_data = data_ingestion.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    train_arr, test_arr = data_transformation.initiate_data_transformation(train_data, test_data)
+    
