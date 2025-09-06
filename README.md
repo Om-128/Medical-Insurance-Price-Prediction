@@ -34,13 +34,12 @@ The entire pipeline is packaged into a deployable application using **Docker**, 
 
 **Deployment & DevOps:**  
 - Docker for containerization  
-- GitHub Actions / CircleCI (or preferred CI/CD tool) for automated workflows  
+- GitHub Actions for automated workflows  
 - AWS EC2 for cloud hosting and scalability  
-- Flask / FastAPI for serving APIs  
+- Flask for serving APIs  
 
 **Others:**  
-- Pickle / Joblib for model serialization  
-- Cloud storage or databases for data persistence (optional for extensions)
+- Pickle for model serialization  
 
 ---
 
