@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Insurance Charges Prediction</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Insurance Charges Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        input:focus, select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            font-size: 1.1rem;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .results:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Insurance Charges Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your Age" min="0" max="120" required />
+
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option selected disabled value="">Select your Sex</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="bmi">BMI</label>
+            <input type="number" id="bmi" name="bmi" placeholder="Enter your BMI" step="0.1" min="10" max="60" required />
+
+            <label for="children">Children</label>
+            <input type="number" id="children" name="children" placeholder="Enter number of children" min="0" max="10" required />
+
+            <label for="smoker">Smoker</label>
+            <select id="smoker" name="smoker" required>
+                <option selected disabled value="">Select Smoker Status</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="region">Region</label>
+            <select id="region" name="region" required>
+                <option selected disabled value="">Select Region</option>
+                <option value="southwest">South west</option>
+                <option value="southeast">South east</option>
+                <option value="northwest">North west</option>
+                <option value="northeast">North east</option>
+            </select>
+
+            <input class="btn-primary" type="submit" value="Predict Charges" />
+        </form>
+
+        <div class="results">
+            Prediction Result: {{ results }}
+        </div>
+    </div>
+</body>
+</html>
