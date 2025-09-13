@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.git
+.gitignore
+.vscode
+__init__.py
+*.log
+data/
+tests/
+venv/
+logs/
+catboost_info/
